@@ -1,0 +1,133 @@
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Определение CSS-переменных */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --light-gray: #f2f2f2; /* Цвет фона как на референсе */
+    --text-gray: #222222;
+    --secondary-gray: #666666;
+    
+    --spacing-unit: 24px;
+    --line-height: 1.5;
+    --line-height-heading: 1.3;
+}
+
+/* Базовые стили для страницы */
+body {
+    font-family: 'Courier', 'Courier New', monospace; /* Шрифт Courier */
+    line-height: var(--line-height);
+    color: var(--text-gray);
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Основной контент - максимальная ширина и отступы */
+.content {
+    background-color: var(--light-gray); /* Фон контента совпадает с фоном страницы */
+    padding: calc(var(--spacing-unit) * 2);
+    max-width: 800px; /* Ограниченная ширина для лучшей читаемости */
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+    box-shadow: none; /* Убрана тень */
+    text-align: center; /* Центрирование для аватара и имени */
+}
+
+/* Аватар */
+.avatar-container {
+    margin: 0 auto var(--spacing-unit);
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Имя */
+.name {
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    color: var(--black);
+}
+
+/* Стили для информационных блоков */
+.info-block {
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    text-align: left;
+}
+
+/* Метки (ОБО МНЕ, КОНТАКТЫ) */
+.info-label {
+    font-family: 'Courier', 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--black);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Значения (основной контент) */
+.info-value {
+    font-size: 16px;
+    color: var(--text-gray);
+    font-family: 'Courier', 'Courier New', monospace;
+    letter-spacing: 0.01em;
+}
+
+/* Стили для абзацев */
+.info-value p {
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Убираем нижний отступ у последнего параграфа в блоке */
+.info-value p:last-child {
+    margin-bottom: 0;
+}
+
+/* Стили для ссылок */
+.info-value a {
+    color: var(--text-gray);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-gray);
+    transition: color 0.2s, border-color 0.2s;
+    font-family: 'Courier', 'Courier New', monospace;
+}
+
+.info-value a:hover {
+    color: var(--black);
+    border-color: var(--black);
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .content {
+        padding: var(--spacing-unit);
+    }
+    
+    .name {
+        font-size: 28px;
+    }
+    
+    .info-label {
+        font-size: 16px;
+    }
+}
